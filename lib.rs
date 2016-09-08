@@ -17,14 +17,14 @@ extern {}
 #[link(name = "openvr_api")]
 extern {}
 
-#[cfg(not(target_os="win32"))]
+#[cfg(not(target_os="windows"))]
 mod binding_other;
-#[cfg(not(target_os="win32"))]
+#[cfg(not(target_os="windows"))]
 pub use binding_other::*;
 
-#[cfg(target_os="win32")]
+#[cfg(target_os="windows")]
 mod binding_win32;
-#[cfg(target_os="win32")]
+#[cfg(target_os="windows")]
 pub use binding_win32::*;
 
 extern "C" {
